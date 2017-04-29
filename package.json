@@ -1,9 +1,9 @@
 {
-  "name": "aws-single-page-app-via-cloudfront",
+  "name": "tin-olive-carnation",
   "version": "1.0.0",
-  "description": "Demonstrating how to deploy a Single Page Application with Serverless",
-  "repository": "<replace>",
-  "author": "",
+  "description": "cloud images project",
+  "repository": "https://github.com/dplusic/tin-olive-carnation",
+  "author": "dplusic",
   "license": "MIT",
   "devDependencies": {
     "serverless-single-page-app-plugin": "file:./serverless-single-page-app-plugin"
