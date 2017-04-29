@@ -191,6 +191,19 @@ resources:
           #   Bucket: mylogs.s3.amazonaws.com
           #   Prefix: myprefix
 
+    CognitoUserPool:
+      Type: AWS::Cognito::UserPool
+      Properties:
+        UserPoolName: ${self:service}-userpool
+        Schema:
+          - Name: email
+            Required: 'true'
+        AliasAttributes:
+          - email
+        AutoVerifiedAttributes:
+          - email
+
+
   ## In order to print out the hosted domain via `serverless info` we need to define the DomainName output for CloudFormation
   Outputs:
     WebAppCloudFrontDistributionOutput:
