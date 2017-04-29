@@ -5,7 +5,11 @@
   "repository": "https://github.com/dplusic/tin-olive-carnation",
   "author": "dplusic",
   "license": "MIT",
+  "scripts": {
+    "sls": "serverless"
+  },
   "devDependencies": {
+    "serverless": "^1.12.1",
     "serverless-single-page-app-plugin": "file:./serverless-single-page-app-plugin"
   }
 }
