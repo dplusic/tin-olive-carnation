@@ -6,10 +6,6 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  header: {
-    id: 'app.containers.SignUpPage.header',
-    defaultMessage: 'This is SignUpPage container !',
-  },
   email: {
     id: 'app.containers.SignUpPage.email',
     defaultMessage: 'Email',
