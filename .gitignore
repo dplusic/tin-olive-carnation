@@ -7,3 +7,6 @@ jspm_packages
 
 # ide related
 .vs/
+
+# dist directories
+/app/

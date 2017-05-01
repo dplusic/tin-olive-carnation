@@ -6,9 +6,11 @@
   "author": "dplusic",
   "license": "MIT",
   "scripts": {
+    "build-app": "cd app.src && npm run build && cpx --clean build/** ../app",
     "sls": "serverless"
   },
   "devDependencies": {
+    "cpx": "^1.5.0",
     "serverless": "^1.12.1",
     "serverless-single-page-app-plugin": "file:./serverless-single-page-app-plugin"
   }
