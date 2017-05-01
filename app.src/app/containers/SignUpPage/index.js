@@ -8,6 +8,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
+import SignUpForm from './SignUpForm';
 import makeSelectSignUpPage from './selectors';
 import messages from './messages';
 
@@ -16,6 +17,7 @@ export class SignUpPage extends React.PureComponent { // eslint-disable-line rea
     return (
       <div>
         <FormattedMessage {...messages.header} />
+        <SignUpForm onSubmit={() => {}} />
       </div>
     );
   }
