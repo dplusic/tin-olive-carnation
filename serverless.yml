@@ -200,6 +200,18 @@ resources:
           - email
         AutoVerifiedAttributes:
           - email
+    CognitoUserPoolClient:
+      Type: AWS::Cognito::UserPoolClient
+      Properties:
+        UserPoolId:
+          Ref: CognitoUserPool
+        ClientName: ${self:service}-app
+        GenerateSecret: 'false'
+        ReadAttributes:
+          - email
+        WriteAttributes:
+          - email
+    
 
 
   ## In order to print out the hosted domain via `serverless info` we need to define the DomainName output for CloudFormation
