@@ -1,18 +1,18 @@
 
 import {
-  defaultAction,
+  signUp,
 } from '../actions';
 import {
-  DEFAULT_ACTION,
+  SIGN_UP,
 } from '../constants';
 
 describe('SignUpPage actions', () => {
   describe('Default Action', () => {
     it('has a type of DEFAULT_ACTION', () => {
       const expected = {
-        type: DEFAULT_ACTION,
+        type: SIGN_UP,
       };
-      expect(defaultAction()).toEqual(expected);
+      expect(signUp()).toEqual(expected);
     });
   });
 });

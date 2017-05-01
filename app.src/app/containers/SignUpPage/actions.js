@@ -5,11 +5,12 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  SIGN_UP,
 } from './constants';
 
-export function defaultAction() {
+export function signUp(values) {
   return {
-    type: DEFAULT_ACTION,
+    type: SIGN_UP,
+    values,
   };
 }

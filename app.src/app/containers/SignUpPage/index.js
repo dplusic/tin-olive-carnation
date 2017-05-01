@@ -8,20 +8,21 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import SignUpForm from './SignUpForm';
+import { signUp } from './actions';
 import makeSelectSignUpPage from './selectors';
 
 export class SignUpPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div>
-        <SignUpForm onSubmit={() => {}} />
+        <SignUpForm onSubmit={this.props.onSubmitForm} />
       </div>
     );
   }
 }
 
 SignUpPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  onSubmitForm: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -30,7 +31,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
+    onSubmitForm: (values) => dispatch(signUp(values)),
   };
 }
 
