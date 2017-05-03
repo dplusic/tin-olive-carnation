@@ -3,6 +3,15 @@ import messages from './messages';
 export default (values) => {
   const errors = {};
 
+  const username = values.get('username');
+  if (!username) {
+    errors.username = messages.error.required;
+  } else if (!/^[A-Z0-9._-]+$/i.test(username)) {
+    errors.username = messages.error.username.invalidCharacter;
+  } else if (username.length < 6 || username.length > 31) {
+    errors.username = messages.error.username.invalidLength;
+  }
+
   const email = values.get('email');
   if (!email) {
     errors.email = messages.error.required;

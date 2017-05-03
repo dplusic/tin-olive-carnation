@@ -6,6 +6,10 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
+  username: {
+    id: 'app.containers.SignUpPage.username',
+    defaultMessage: 'Username',
+  },
   email: {
     id: 'app.containers.SignUpPage.email',
     defaultMessage: 'Email',
@@ -26,6 +30,16 @@ export default defineMessages({
     required: {
       id: 'app.containers.SignUpPage.error.required',
       defaultMessage: 'Required',
+    },
+    username: {
+      invalidCharacter: {
+        id: 'app.containers.SignUpPage.error.username.invalidCharacter',
+        defaultMessage: 'Use alphabet, number, ".", "_" and "-"',
+      },
+      invalidLength: {
+        id: 'app.containers.SignUpPage.error.username.invalidLength',
+        defaultMessage: 'Use 6~30 characters',
+      },
     },
     email: {
       invalid: {
