@@ -9,13 +9,17 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import SignUpForm from './SignUpForm';
 import { signUp } from './actions';
-import makeSelectSignUpPage from './selectors';
+import { makeSelectError } from './selectors';
 
 export class SignUpPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
+    const { error } = this.props;
     return (
       <div>
         <SignUpForm onSubmit={this.props.onSubmitForm} />
+        <p>
+          {error && error.message}
+        </p>
       </div>
     );
   }
@@ -23,10 +27,11 @@ export class SignUpPage extends React.PureComponent { // eslint-disable-line rea
 
 SignUpPage.propTypes = {
   onSubmitForm: PropTypes.func.isRequired,
+  error: React.PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
-  SignUpPage: makeSelectSignUpPage(),
+  error: makeSelectError(),
 });
 
 function mapDispatchToProps(dispatch) {

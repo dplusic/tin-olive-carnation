@@ -1,7 +1,8 @@
-import { take, takeLatest, cancel, cps } from 'redux-saga/effects';
+import { take, takeLatest, cancel, cps, put } from 'redux-saga/effects';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { CognitoUserPool, CognitoUserAttribute } from 'amazon-cognito-identity-js';
 import { SIGN_UP } from './constants';
+import { signUpError } from './actions';
 
 export function* signUp({ values }) {
   const username = values.get('username');
@@ -18,9 +19,8 @@ export function* signUp({ values }) {
 
   try {
     const result = yield cps([userPool, userPool.signUp], username, password, attributeList, null);
-    console.log(result);
   } catch (e) {
-    console.log(e);
+    yield put(signUpError(e));
   }
 }
 
