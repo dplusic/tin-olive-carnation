@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form/immutable';
 import { FormattedMessage } from 'react-intl';
-import SignUpFormField from './SignUpFormField';
+import FormField from '../../components/FormField';
 import validate from './validate';
 import messages from './messages';
 
@@ -13,25 +13,25 @@ class SignUpForm extends React.PureComponent { // eslint-disable-line react/pref
         <Field
           name="username"
           type="text"
-          component={SignUpFormField}
+          component={FormField}
           label={<FormattedMessage {...messages.username} />}
         />
         <Field
           name="email"
           type="email"
-          component={SignUpFormField}
+          component={FormField}
           label={<FormattedMessage {...messages.email} />}
         />
         <Field
           name="password"
           type="password"
-          component={SignUpFormField}
+          component={FormField}
           label={<FormattedMessage {...messages.password} />}
         />
         <Field
           name="passwordCheck"
           type="password"
-          component={SignUpFormField}
+          component={FormField}
           label={<FormattedMessage {...messages.passwordCheck} />}
         />
         <button

@@ -1,8 +1,15 @@
+/**
+*
+* FormField
+*
+*/
+
 import React, { PropTypes } from 'react';
 import { FormattedMessage } from 'react-intl';
 import Input from './Input';
 
-class SignUpFormField extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+
+class FormField extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const { input, label, type, meta: { touched, error } } = this.props;
     return (
@@ -20,11 +27,11 @@ class SignUpFormField extends React.PureComponent { // eslint-disable-line react
   }
 }
 
-SignUpFormField.propTypes = {
+FormField.propTypes = {
   input: PropTypes.object.isRequired,
   label: PropTypes.node.isRequired,
   type: PropTypes.string.isRequired,
   meta: PropTypes.object.isRequired,
 };
 
-export default SignUpFormField;
+export default FormField;
