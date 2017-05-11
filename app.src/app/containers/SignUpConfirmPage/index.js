@@ -6,32 +6,37 @@
 
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
-import makeSelectSignUpConfirmPage from './selectors';
-import messages from './messages';
+import SignUpConfirmForm from './SignUpConfirmForm';
+import { signUpConfirm } from './actions';
+import { makeSelectError } from './selectors';
 
 export class SignUpConfirmPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
+    const { error } = this.props;
     return (
       <div>
-        <FormattedMessage {...messages.header} />
+        <SignUpConfirmForm onSubmit={this.props.onSubmitForm} />
+        <p>
+          {error && error.message}
+        </p>
       </div>
     );
   }
 }
 
 SignUpConfirmPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  onSubmitForm: PropTypes.func.isRequired,
+  error: React.PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
-  SignUpConfirmPage: makeSelectSignUpConfirmPage(),
+  error: makeSelectError(),
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
+    onSubmitForm: (values) => dispatch(signUpConfirm(values)),
   };
 }
 

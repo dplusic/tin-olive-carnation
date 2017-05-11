@@ -6,8 +6,16 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  header: {
-    id: 'app.containers.SignUpConfirmPage.header',
-    defaultMessage: 'This is SignUpConfirmPage container !',
+  username: {
+    id: 'app.containers.SignUpConfirmPage.username',
+    defaultMessage: 'Username',
+  },
+  confirmCode: {
+    id: 'app.containers.SignUpConfirmPage.confirmCode',
+    defaultMessage: 'Confirm Code',
+  },
+  submit: {
+    id: 'app.containers.SignUpConfirmPage.submit',
+    defaultMessage: 'Confirm',
   },
 });

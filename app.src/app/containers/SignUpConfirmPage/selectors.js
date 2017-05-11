@@ -9,6 +9,11 @@ const selectSignUpConfirmPageDomain = () => (state) => state.get('signUpConfirmP
  * Other specific selectors
  */
 
+const makeSelectError = () => createSelector(
+ selectSignUpConfirmPageDomain(),
+ (signUpConfirmState) => signUpConfirmState.get('error')
+);
+
 
 /**
  * Default selector used by SignUpConfirmPage
@@ -22,4 +27,5 @@ const makeSelectSignUpConfirmPage = () => createSelector(
 export default makeSelectSignUpConfirmPage;
 export {
   selectSignUpConfirmPageDomain,
+  makeSelectError,
 };

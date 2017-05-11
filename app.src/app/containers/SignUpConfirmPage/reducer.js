@@ -6,14 +6,14 @@
 
 import { fromJS } from 'immutable';
 import {
-  DEFAULT_ACTION,
+  SIGN_UP_CONFIRM,
 } from './constants';
 
 const initialState = fromJS({});
 
 function signUpConfirmPageReducer(state = initialState, action) {
   switch (action.type) {
-    case DEFAULT_ACTION:
+    case SIGN_UP_CONFIRM:
       return state;
     default:
       return state;

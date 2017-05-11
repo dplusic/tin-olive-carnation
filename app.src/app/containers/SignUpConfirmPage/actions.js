@@ -5,11 +5,11 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  SIGN_UP_CONFIRM,
 } from './constants';
 
-export function defaultAction() {
+export function signUpConfirm() {
   return {
-    type: DEFAULT_ACTION,
+    type: SIGN_UP_CONFIRM,
   };
 }

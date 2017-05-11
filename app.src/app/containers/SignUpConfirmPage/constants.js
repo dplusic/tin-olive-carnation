@@ -4,4 +4,4 @@
  *
  */
 
-export const DEFAULT_ACTION = 'app/SignUpConfirmPage/DEFAULT_ACTION';
+export const SIGN_UP_CONFIRM = 'app/SignUpConfirmPage/SIGN_UP_CONFIRM';
