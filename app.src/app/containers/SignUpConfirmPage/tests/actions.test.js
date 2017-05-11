@@ -1,18 +1,18 @@
 
 import {
-  defaultAction,
+  signUpConfirm,
 } from '../actions';
 import {
-  DEFAULT_ACTION,
+  SIGN_UP_CONFIRM,
 } from '../constants';
 
 describe('SignUpConfirmPage actions', () => {
-  describe('Default Action', () => {
-    it('has a type of DEFAULT_ACTION', () => {
+  describe('Sign Up Confirm Action', () => {
+    it('has a type of SIGN_UP_CONFIRM', () => {
       const expected = {
-        type: DEFAULT_ACTION,
+        type: SIGN_UP_CONFIRM,
       };
-      expect(defaultAction()).toEqual(expected);
+      expect(signUpConfirm()).toEqual(expected);
     });
   });
 });
