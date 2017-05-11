@@ -196,8 +196,6 @@ resources:
         Schema:
           - Name: email
             Required: 'true'
-        AliasAttributes:
-          - email
         AutoVerifiedAttributes:
           - email
     CognitoUserPoolClient:
