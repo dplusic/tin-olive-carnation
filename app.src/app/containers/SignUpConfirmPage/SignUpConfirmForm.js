@@ -10,10 +10,10 @@ class SignUpConfirmForm extends React.PureComponent { // eslint-disable-line rea
     return (
       <form onSubmit={handleSubmit}>
         <Field
-          name="username"
-          type="text"
+          name="email"
+          type="email"
           component={FormField}
-          label={<FormattedMessage {...messages.username} />}
+          label={<FormattedMessage {...messages.email} />}
         />
         <Field
           name="confirmCode"

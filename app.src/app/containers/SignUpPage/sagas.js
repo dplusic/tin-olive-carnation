@@ -6,7 +6,6 @@ import { SIGN_UP } from './constants';
 import { signUpError } from './actions';
 
 export function* signUp({ values }) {
-  const username = values.get('username');
   const email = values.get('email');
   const password = values.get('password');
 
@@ -19,7 +18,7 @@ export function* signUp({ values }) {
   ];
 
   try {
-    yield cps([userPool, userPool.signUp], username, password, attributeList, null);
+    yield cps([userPool, userPool.signUp], email, password, attributeList, null);
     yield call([browserHistory, browserHistory.push], '/signupconfirm');
   } catch (e) {
     yield put(signUpError(e));

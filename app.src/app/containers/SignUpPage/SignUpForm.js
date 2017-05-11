@@ -11,12 +11,6 @@ class SignUpForm extends React.PureComponent { // eslint-disable-line react/pref
     return (
       <form onSubmit={handleSubmit}>
         <Field
-          name="username"
-          type="text"
-          component={FormField}
-          label={<FormattedMessage {...messages.username} />}
-        />
-        <Field
           name="email"
           type="email"
           component={FormField}

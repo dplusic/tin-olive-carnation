@@ -6,9 +6,9 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  username: {
-    id: 'app.containers.SignUpConfirmPage.username',
-    defaultMessage: 'Username',
+  email: {
+    id: 'app.containers.SignUpConfirmPage.email',
+    defaultMessage: 'Email',
   },
   confirmCode: {
     id: 'app.containers.SignUpConfirmPage.confirmCode',

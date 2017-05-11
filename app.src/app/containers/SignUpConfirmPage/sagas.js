@@ -6,7 +6,7 @@ import { SIGN_UP_CONFIRM } from './constants';
 import { signUpConfirmError } from './actions';
 
 export function* signUpConfirm({ values }) {
-  const username = values.get('username');
+  const email = values.get('email');
   const confirmCode = values.get('confirmCode');
 
   const userPool = new CognitoUserPool({
@@ -14,7 +14,7 @@ export function* signUpConfirm({ values }) {
     ClientId: '6idn80s1spobefoddgrq6dfrt',
   });
   const cognitoUser = new CognitoUser({
-    Username: username,
+    Username: email,
     Pool: userPool,
   });
 
