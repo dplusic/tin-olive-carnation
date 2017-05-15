@@ -4,12 +4,10 @@
  * This contains all the text for the SignUpConfirmPage component.
  */
 import { defineMessages } from 'react-intl';
+import appMessages from '../App/messages';
 
 export default defineMessages({
-  email: {
-    id: 'app.containers.SignUpConfirmPage.email',
-    defaultMessage: 'Email',
-  },
+  email: appMessages.Sign.email,
   confirmCode: {
     id: 'app.containers.SignUpConfirmPage.confirmCode',
     defaultMessage: 'Confirm Code',

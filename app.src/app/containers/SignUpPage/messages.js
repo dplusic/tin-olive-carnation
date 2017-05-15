@@ -4,12 +4,10 @@
  * This contains all the text for the SignUpPage component.
  */
 import { defineMessages } from 'react-intl';
+import appMessages from '../App/messages';
 
 export default defineMessages({
-  email: {
-    id: 'app.containers.SignUpPage.email',
-    defaultMessage: 'Email',
-  },
+  email: appMessages.Sign.email,
   password: {
     id: 'app.containers.SignUpPage.password',
     defaultMessage: 'Password',
