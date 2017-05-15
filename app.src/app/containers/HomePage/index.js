@@ -21,9 +21,16 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
         <h1>
           <FormattedMessage {...messages.header} />
         </h1>
-        <Link to="/signup">
-          <FormattedMessage {...messages.signup} />
-        </Link>
+        <div>
+          <Link to="/signin">
+            <FormattedMessage {...messages.signin} />
+          </Link>
+        </div>
+        <div>
+          <Link to="/signup">
+            <FormattedMessage {...messages.signup} />
+          </Link>
+        </div>
       </div>
     );
   }

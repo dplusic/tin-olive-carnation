@@ -9,8 +9,5 @@ import appMessages from '../App/messages';
 export default defineMessages({
   email: appMessages.Sign.email,
   password: appMessages.Sign.password,
-  submit: {
-    id: 'app.containers.SignInPage.submit',
-    defaultMessage: 'Sign In',
-  },
+  submit: appMessages.Sign.signin,
 });

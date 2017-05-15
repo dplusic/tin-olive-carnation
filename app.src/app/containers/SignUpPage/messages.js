@@ -13,10 +13,7 @@ export default defineMessages({
     id: 'app.containers.SignUpPage.passwordCheck',
     defaultMessage: 'Password Check',
   },
-  submit: {
-    id: 'app.containers.SignUpPage.submit',
-    defaultMessage: 'Sign Up',
-  },
+  submit: appMessages.Sign.signup,
   error: {
     required: {
       id: 'app.containers.SignUpPage.error.required',
