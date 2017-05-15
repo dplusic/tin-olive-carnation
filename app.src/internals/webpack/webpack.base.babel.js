@@ -4,6 +4,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = (options) => ({
   entry: options.entry,
@@ -75,6 +76,7 @@ module.exports = (options) => ({
       },
     }),
     new webpack.NamedModulesPlugin(),
+    new Dotenv(),
   ]),
   resolve: {
     modules: ['app', 'node_modules'],

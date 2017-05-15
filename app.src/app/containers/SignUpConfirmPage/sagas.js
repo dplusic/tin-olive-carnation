@@ -10,8 +10,8 @@ export function* signUpConfirm({ values }) {
   const confirmCode = values.get('confirmCode');
 
   const userPool = new CognitoUserPool({
-    UserPoolId: 'ap-northeast-2_W6d2OguRO',
-    ClientId: '6idn80s1spobefoddgrq6dfrt',
+    UserPoolId: process.env.AWS_COGNITO_USER_POOL_ID,
+    ClientId: process.env.AWS_COGNITO_USER_POOL_CLIENT_ID,
   });
   const cognitoUser = new CognitoUser({
     Username: email,
