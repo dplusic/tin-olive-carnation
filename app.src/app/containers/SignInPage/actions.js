@@ -5,11 +5,11 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  SIGN_IN,
 } from './constants';
 
-export function defaultAction() {
+export function signIn() {
   return {
-    type: DEFAULT_ACTION,
+    type: SIGN_IN,
   };
 }

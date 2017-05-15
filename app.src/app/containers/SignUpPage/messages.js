@@ -8,10 +8,7 @@ import appMessages from '../App/messages';
 
 export default defineMessages({
   email: appMessages.Sign.email,
-  password: {
-    id: 'app.containers.SignUpPage.password',
-    defaultMessage: 'Password',
-  },
+  password: appMessages.Sign.password,
   passwordCheck: {
     id: 'app.containers.SignUpPage.passwordCheck',
     defaultMessage: 'Password Check',

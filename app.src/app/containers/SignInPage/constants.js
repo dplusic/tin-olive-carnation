@@ -4,4 +4,4 @@
  *
  */
 
-export const DEFAULT_ACTION = 'app/SignInPage/DEFAULT_ACTION';
+export const SIGN_IN = 'app/SignInPage/SIGN_IN';

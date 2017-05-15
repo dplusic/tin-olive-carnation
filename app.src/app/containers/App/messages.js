@@ -11,5 +11,9 @@ export default defineMessages({
       id: 'app.Sign.email',
       defaultMessage: 'Email',
     },
+    password: {
+      id: 'app.Sign.password',
+      defaultMessage: 'Password',
+    },
   },
 });

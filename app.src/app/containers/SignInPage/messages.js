@@ -4,10 +4,13 @@
  * This contains all the text for the SignInPage component.
  */
 import { defineMessages } from 'react-intl';
+import appMessages from '../App/messages';
 
 export default defineMessages({
-  header: {
-    id: 'app.containers.SignInPage.header',
-    defaultMessage: 'This is SignInPage container !',
+  email: appMessages.Sign.email,
+  password: appMessages.Sign.password,
+  submit: {
+    id: 'app.containers.SignInPage.submit',
+    defaultMessage: 'Sign In',
   },
 });
