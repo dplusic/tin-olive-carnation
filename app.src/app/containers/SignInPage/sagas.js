@@ -1,6 +1,7 @@
-import { take, takeLatest, cancel, put, call } from 'redux-saga/effects';
+import { take, takeLatest, cancel, put, call, cps } from 'redux-saga/effects';
 import { browserHistory } from 'react-router';
 import { LOCATION_CHANGE } from 'react-router-redux';
+import AWS from 'aws-sdk';
 import { CognitoUserPool, CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js';
 import { SIGN_IN } from './constants';
 import { signInError } from './actions';
@@ -23,7 +24,8 @@ export function* signIn({ values }) {
   });
 
   try {
-    yield call(authenticateUser, cognitoUser, authenticationDetail);
+    const authenticationResult = yield call(authenticateUser, cognitoUser, authenticationDetail);
+    yield cps(refreshCredential, userPool, authenticationResult);
     yield call([browserHistory, browserHistory.push], '/');
   } catch (e) {
     yield put(signInError(e));
@@ -41,6 +43,20 @@ function authenticateUser(cognitoUser, authenticationDetail) {
       },
     });
   });
+}
+
+function refreshCredential(userPool, authenticationResult, callback) {
+  const userPoolProviderName = `${userPool.client.endpoint.host}/${userPool.userPoolId}`;
+
+  AWS.config.region = userPool.client.config.region;
+
+  AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    IdentityPoolId: process.env.AWS_COGNITO_IDENTITY_POOL_ID,
+  });
+  AWS.config.credentials.params.Logins = {};
+  AWS.config.credentials.params.Logins[userPoolProviderName] = authenticationResult.getIdToken().getJwtToken();
+
+  AWS.config.credentials.refresh(callback);
 }
 
 // Individual exports for testing
