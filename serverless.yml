@@ -193,7 +193,7 @@ resources:
     CognitoUserPool:
       Type: AWS::Cognito::UserPool
       Properties:
-        UserPoolName: ${self:service}-userpool
+        UserPoolName: ${self:service}-${self:provider.stage}-userpool
         Schema:
           - Name: email
             Required: 'true'
@@ -204,7 +204,7 @@ resources:
       Properties:
         UserPoolId:
           Ref: CognitoUserPool
-        ClientName: ${self:service}-app
+        ClientName: ${self:service}-${self:provider.stage}-app
         GenerateSecret: 'false'
         ReadAttributes:
           - email
