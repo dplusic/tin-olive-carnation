@@ -20,8 +20,7 @@ export function* signUpConfirm({ values }) {
 
   try {
     yield cps([cognitoUser, cognitoUser.confirmRegistration], confirmCode, true);
-    // TODO move to signin page
-    yield call([browserHistory, browserHistory.push], '/');
+    yield call([browserHistory, browserHistory.push], '/signin');
   } catch (e) {
     yield put(signUpConfirmError(e));
   }
